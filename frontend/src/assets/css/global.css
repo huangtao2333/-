@@ -1,0 +1,288 @@
+/* 全局样式文件 */
+
+/* 京东主题色彩 */
+:root {
+  --jd-primary: #e4393c;
+  --jd-primary-hover: #c81623;
+  --jd-secondary: #f10214;
+  --jd-success: #67c23a;
+  --jd-warning: #e6a23c;
+  --jd-danger: #f56c6c;
+  --jd-info: #909399;
+  
+  --jd-text-primary: #303133;
+  --jd-text-regular: #606266;
+  --jd-text-secondary: #909399;
+  --jd-text-placeholder: #c0c4cc;
+  
+  --jd-border-light: #ebeef5;
+  --jd-border-lighter: #f2f6fc;
+  --jd-background: #f5f5f5;
+  --jd-background-light: #fafafa;
+}
+
+/* 重置样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  color: var(--jd-text-primary);
+  background-color: var(--jd-background);
+  line-height: 1.5;
+}
+
+/* 清除浮动 */
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* 文本省略 */
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-ellipsis-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 布局相关 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+/* 间距 */
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+.ml-10 { margin-left: 10px; }
+.ml-20 { margin-left: 20px; }
+.mr-10 { margin-right: 10px; }
+.mr-20 { margin-right: 20px; }
+
+.pt-10 { padding-top: 10px; }
+.pt-20 { padding-top: 20px; }
+.pb-10 { padding-bottom: 10px; }
+.pb-20 { padding-bottom: 20px; }
+.pl-10 { padding-left: 10px; }
+.pl-20 { padding-left: 20px; }
+.pr-10 { padding-right: 10px; }
+.pr-20 { padding-right: 20px; }
+
+/* 文本对齐 */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* 字体大小 */
+.font-12 { font-size: 12px; }
+.font-14 { font-size: 14px; }
+.font-16 { font-size: 16px; }
+.font-18 { font-size: 18px; }
+.font-20 { font-size: 20px; }
+.font-24 { font-size: 24px; }
+
+/* 字体颜色 */
+.text-primary { color: var(--jd-primary); }
+.text-success { color: var(--jd-success); }
+.text-warning { color: var(--jd-warning); }
+.text-danger { color: var(--jd-danger); }
+.text-info { color: var(--jd-info); }
+.text-muted { color: var(--jd-text-secondary); }
+
+/* 按钮样式 */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--jd-primary);
+  border-color: var(--jd-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--jd-primary-hover);
+  border-color: var(--jd-primary-hover);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--jd-primary);
+  color: var(--jd-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--jd-primary);
+  color: #fff;
+}
+
+/* 卡片样式 */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--jd-border-light);
+  font-weight: 500;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* 商品价格样式 */
+.price {
+  color: var(--jd-primary);
+  font-weight: bold;
+}
+
+.price-symbol {
+  font-size: 12px;
+}
+
+.price-integer {
+  font-size: 18px;
+}
+
+.price-decimal {
+  font-size: 14px;
+}
+
+.original-price {
+  color: var(--jd-text-secondary);
+  text-decoration: line-through;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+/* 标签样式 */
+.tag {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 2px;
+  margin-right: 4px;
+}
+
+.tag-hot {
+  background-color: var(--jd-primary);
+  color: #fff;
+}
+
+.tag-new {
+  background-color: var(--jd-success);
+  color: #fff;
+}
+
+.tag-recommend {
+  background-color: var(--jd-warning);
+  color: #fff;
+}
+
+/* 加载动画 */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--jd-border-light);
+  border-top: 2px solid var(--jd-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--jd-background-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--jd-border-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--jd-text-placeholder);
+}
