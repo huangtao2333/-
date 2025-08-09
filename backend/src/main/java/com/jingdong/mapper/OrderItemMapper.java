@@ -2,6 +2,7 @@ package com.jingdong.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.jingdong.entity.OrderItem;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -55,9 +56,15 @@ public interface OrderItemMapper extends BaseMapper<OrderItem> {
 
     /**
      * 批量插入订单详情
-     * 
+     *
      * @param orderItems 订单详情列表
      * @return 影响行数
      */
+    @Insert("<script>" +
+            "INSERT INTO order_item (order_id, product_id, product_name, product_image, product_price, quantity, total_price, create_time, update_time) VALUES " +
+            "<foreach collection='orderItems' item='item' separator=','>" +
+            "(#{item.orderId}, #{item.productId}, #{item.productName}, #{item.productImage}, #{item.productPrice}, #{item.quantity}, #{item.totalPrice}, #{item.createTime}, #{item.updateTime})" +
+            "</foreach>" +
+            "</script>")
     int batchInsert(@Param("orderItems") List<OrderItem> orderItems);
 }
